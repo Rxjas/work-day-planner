@@ -65,7 +65,13 @@ textarea{
   color: white;
 }
 
-.saveBtn i:hover {
+.saveButtons i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+
+.userInputs{
+  width: 100%;
+  height: 60px;
+  border: none;
 }
