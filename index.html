@@ -28,69 +28,185 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <!--current day-->
       <p id="currentDay" class="lead"></p>
+
+      <h3 id="currentTime"></h3>
     </header>
     <div class="container">
 
       <div class="row pb-2">
         <div class="col-1 border"><h4 class="displayTimes">9:00 A.M</h4></div>
-        <div class="col-10 border"><input type="text" class="userInputs"></input></div>
-        <div class="col-1 border"><button type="button" class="btn btn-info saveButtons">Save</button></div>
+        <div class="col-10 border"><textarea id="nineUserInput" class="usertextareas" cols="110" rows="3"></textarea></div>
+        <div class="col-1 border"><button id="nineButton" type="button" class="btn btn-info saveButtons">Save</button></div>
       </div>
       
       <div class="row pb-2">
         <div class="col-1 border"><h4 class="displayTimes">10:00 A.M</h4></div>
-        <div class="col-10 border"><input type="text" class="userInputs"></input></div>
-        <div class="col-1 border"><button type="button" class="btn btn-info saveButtons">Save</button></div>
+        <div class="col-10 border"><textarea id="tenUserInput" class="usertextareas" cols="110" rows="3"></textarea></div>
+        <div class="col-1 border"><button id="tenButton" type="button" class="btn btn-info saveButtons">Save</button></div>
       </div>
 
       <div class="row pb-2">
         <div class="col-1 border"><h4 class="displayTimes">11:00 A.M</h4></div>
-        <div class="col-10 border"><input type="text" class="userInputs"></input></div>
-        <div class="col-1 border"><button type="button" class="btn btn-info saveButtons">Save</button></div>
+        <div class="col-10 border"><textarea id="elevenUserInput" class="usertextareas" cols="110" rows="3"></textarea></div>
+        <div class="col-1 border"><button id="elevenButton" type="button" class="btn btn-info saveButtons">Save</button></div>
       </div>
 
       <div class="row pb-2">
         <div class="col-1 border"><h4 class="displayTimes">12:00 P.M</h4></div>
-        <div class="col-10 border"><input type="text" class="userInputs"></input></div>
-        <div class="col-1 border"><button type="button" class="btn btn-info saveButtons">Save</button></div>
+        <div class="col-10 border"><textarea id="twelveUserInput" class="usertextareas" cols="110" rows="3"></textarea></div>
+        <div class="col-1 border"><button id="twelveButton" type="button" class="btn btn-info saveButtons">Save</button></div>
       </div>
 
       <div class="row pb-2">
         <div class="col-1 border"><h4 class="displayTimes">1:00 P.M</h4></div>
-        <div class="col-10 border"><input type="text" class="userInputs"></input></div>
-        <div class="col-1 border"><button type="button" class="btn btn-info saveButtons">Save</button></div>
+        <div class="col-10 border"><textarea id="oneUserInput" class="usertextareas" cols="110" rows="3"></textarea></div>
+        <div class="col-1 border"><button id="oneButton" type="button" class="btn btn-info saveButtons">Save</button></div>
       </div>
 
       <div class="row pb-2">
         <div class="col-1 border"><h4 class="displayTimes">2:00 P.M</h4></div>
-        <div class="col-10 border"><input type="text" class="userInputs"></input></div>
-        <div class="col-1 border"><button type="button" class="btn btn-info saveButtons">Save</button></div>
+        <div class="col-10 border"><textarea id="twoUserInput" class="usertextareas" cols="110" rows="3"></textarea></div>
+        <div class="col-1 border"><button id="twoButton" type="button" class="btn btn-info saveButtons">Save</button></div>
       </div>
 
       <div class="row pb-2">
         <div class="col-1 border"><h4 class="displayTimes">3:00 P.M</h4></div>
-        <div class="col-10 border"><input type="text" class="userInputs"></input></div>
-        <div class="col-1 border"><button type="button" class="btn btn-info saveButtons">Save</button></div>
+        <div class="col-10 border"><textarea id="threeUserInput" class="usertextareas" cols="110" rows="3"></textarea></div>
+        <div class="col-1 border"><button id="threeButton" type="button" class="btn btn-info saveButtons">Save</button></div>
       </div>
 
       <div class="row pb-2">
         <div class="col-1 border"><h4 class="displayTimes">4:00 P.M</h4></div>
-        <div class="col-10 border"><input type="text" class="userInputs"></input></div>
-        <div class="col-1 border"><button type="button" class="btn btn-info saveButtons">Save</button></div>
+        <div class="col-10 border"><textarea id="fourUserInput" class="usertextareas" cols="110" rows="3"></textarea></div>
+        <div class="col-1 border"><button id="fourButton" type="button" class="btn btn-info saveButtons">Save</button></div>
       </div>
 
       <div class="row pb-2">
         <div class="col-1 border"><h4 class="displayTimes">5:00 P.M</h4></div>
-        <div class="col-10 border"><input type="text" class="userInputs"></input></div>
-        <div class="col-1 border"><button type="button" class="btn btn-info saveButtons">Save</button></div>
+        <div class="col-10 border"><textarea id="fiveUserInput" class="usertextareas" cols="110" rows="3"></textarea></div>
+        <div class="col-1 border"><button id="fiveButton" type="button" class="btn btn-info saveButtons">Save</button></div>
       </div>
+
       <!-- Timeblocks go here -->
     </div>
 
 
     <!--additional JS-->
-    <script src="assets/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- <script src="assets/script.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+        $(document).ready(function(){
+
+          //  m = moment(Date);
+          //display day at top of planner
+          $('#currentDay').text(moment().format('dddd' + ', '  + 'MMMM Do YYYY'));
+          //display the current time at the top
+          $('#currentTime').text(moment().format('hh:mm a'));
+
+          var time = moment().format('HH');
+          console.log(time);
+          
+          // target and acquire items in the storage
+          var nineNewText = localStorage.getItem('nine');
+          var tenNewText = localStorage.getItem('ten');
+          var elevenNewText = localStorage.getItem('eleven');
+          var twelveNewText = localStorage.getItem('twelve');
+          var oneNewText = localStorage.getItem('one');
+          var twoNewText = localStorage.getItem('two');
+          var threeNewText = localStorage.getItem('three');
+          var fourNewText = localStorage.getItem('four');
+          var fiveNewText = localStorage.getItem('five');
+          //set the textboxes equal to the new input saved
+             $('#nineUserInput').val(nineNewText);
+             $('#tenUserInput').val(tenNewText);
+             $('#elevenUserInput').val(elevenNewText);
+             $('#twelveUserInput').val(twelveNewText);
+             $('#oneUserInput').val(oneNewText);
+             $('#twoUserInput').val(twoNewText);
+             $('#threeUserInput').val(threeNewText);
+             $('#fourUserInput').val(fourNewText);
+             $('#fiveUserInput').val(fiveNewText);
+
+          // all the buttons to save to local storage 
+                  //save button for 9am
+         $('#nineButton').on('click', function(){
+                //put the user value into a variable
+            var nineText = $('#nineUserInput').val();
+            console.log('shit works!')
+                   //save to local storage
+             localStorage.setItem('nine', nineText)
+          }); 
+
+                  //save button for 10am
+         $('#tenButton').on('click', function(){
+            var tenText = $('#tenUserInput').val();
+            console.log('shit works!')
+             localStorage.setItem('ten', tenText)
+          }); 
+
+                //save button for 11am
+         $('#elevenButton').on('click', function(){
+            var elevenText = $('#elevenUserInput').val();
+            console.log('shit works!')
+             localStorage.setItem('eleven', elevenText)
+          }); 
+
+                //save button for 12pm
+         $('#twelveButton').on('click', function(){
+            var twelveText = $('#twelveUserInput').val();
+            console.log('shit works!')
+             localStorage.setItem('twelve', twelveText)
+          }); 
+
+                //save button for 1pm
+         $('#oneButton').on('click', function(){
+            var oneText = $('#oneUserInput').val();
+            console.log('shit works!')
+             localStorage.setItem('one', oneText)
+          }); 
+
+                //save button for 2pm
+         $('#twoButton').on('click', function(){
+            var twoText = $('#twoUserInput').val();
+            console.log('shit works!')
+             localStorage.setItem('two', twoText)
+          }); 
+
+               //save button for 3pm
+         $('#threeButton').on('click', function(){
+            var threeText = $('#threeUserInput').val();
+            console.log('shit works!')
+             localStorage.setItem('three', threeText)
+          }); 
+
+                //save button for 4pm
+         $('#fourButton').on('click', function(){
+            var fourText = $('#fourUserInput').val();
+            console.log('shit works!')
+             localStorage.setItem('four', fourText)
+          }); 
+
+                //save button for 5pm
+         $('#fiveButton').on('click', function(){
+            var fiveText = $('#fiveUserInput').val();
+            console.log('shit works!')
+             localStorage.setItem('five', fiveText)
+          }); 
+
+
+
+
+
+        }); // this is the end of the document ready
+
+    </script>
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+
+    
   </body>
 </html>
